@@ -1,6 +1,17 @@
 {
-  "name": "my-new-project",
-  "type": "module",
+  "name": "seleniumgitcourse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webdriverio": "^7.30.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
@@ -11,8 +22,5 @@
     "@wdio/spec-reporter": "^8.6.8",
     "chromedriver": "^111.0.0",
     "wdio-chromedriver-service": "^8.1.1"
-  },
-  "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
   }
 }
