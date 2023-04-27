@@ -1,14 +1,18 @@
-const LoginPage = require('../pageobjects/login.page')
-const SecurePage = require('../pageobjects/secure.page')
+const ProductPage = require('../pageobjects/product.page')
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open()
+describe('My Landing', () => {
+    it('FitCoach should have deeplink', async () => {
+        await ProductPage.open()
+        await ProductPage.openFitCoachLanding()
+        await expect(ProductPage.deepLink).toBeExisting()
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-        await expect(SecurePage.flashAlert).toBeExisting()
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!')
+    })
+
+    it('YogaGo should have deeplink', async () => {
+        await ProductPage.open()
+        await ProductPage.openYogaLanding()
+        await expect(ProductPage.deepLink).toBeExisting()
+
     })
 })
 
